@@ -1,0 +1,10 @@
+body {
+  background-color: pink;
+  color:  olivedrab;
+}
+
+.img {
+  background-image: url(http://localhost:8888/images/462852fc674ae92fba565b96fe2e5bd4.jpg);
+  width: 466px;
+  height: 453px;
+}

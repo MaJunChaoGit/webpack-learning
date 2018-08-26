@@ -1,8 +1,12 @@
 const path = require('path');
 const uglify = require('uglifyjs-webpack-plugin');
 const htmlPlugin = require('html-webpack-plugin');
+const extractTextPlugin = require('extract-text-webpack-plugin');
 
-https://www.jianshu.com/p/6712e4e4b8fe
+const website = {
+  publicPath: "http://localhost:8888/"
+}
+
 module.exports = {
   mode: 'development',
   entry: {
@@ -11,29 +15,33 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, '../dist'),
-    filename: '[name].js'
+    filename: '[name].js',
+    publicPath: website.publicPath
   },
   module: {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          {
-            loader: 'style-loader'
-          },
-          {
-            loader: 'css-loader'
-          }
-        ]
+        use: extractTextPlugin.extract({
+          fallback: 'style-loader',
+          use: 'css-loader'
+        })
       },
       {
         test: /\.(png|jpg|jpeg|git)/,
         use: [{
           loader: 'url-loader',
           options: {
-            limit: 500
+            limit: 500,
+            outputPath: 'images/'
           }
         }]
+      },
+      {
+        test: /\.(htm|html)$/i,
+        use: [
+          'html-withimg-loader'
+        ]
       }
     ]
   },
@@ -47,7 +55,8 @@ module.exports = {
         hash:true, //为了开发中js有缓存效果，所以加入hash，这样可以有效避免缓存JS。
         template:'./src/index.html' //是要打包的html模版路径和文件名称。
        
-    })
+    }),
+    new extractTextPlugin("css/index.css")
   ],
   
   devServer: {
