@@ -1,10 +1,32 @@
+#study {
+  width: 300px;
+  height: 300px;
+  background-color: #000;
+}
+
+#study {
+  position: relative;
+}
+
 body {
   background-color: pink;
-  color:  olivedrab;
+  color: olivedrab;
 }
 
 .img {
   background-image: url(http://localhost:8888/images/462852fc674ae92fba565b96fe2e5bd4.jpg);
   width: 466px;
   height: 453px;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }

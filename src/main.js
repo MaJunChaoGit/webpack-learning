@@ -1,3 +1,7 @@
 import css from './css/index.css';
+import less from './css/indexless.less';
+import scss from './css/indexscss.scss';
 
-alert('1111');
+console.log((() => {
+  return 123;
+})());

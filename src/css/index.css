@@ -7,4 +7,7 @@ body {
   background-image: url('../images/photo.jpg');
   width: 466px;
   height: 453px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

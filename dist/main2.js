@@ -2,4 +2,4 @@
 /*!**********************!*\
   !*** ./src/main2.js ***!
   \**********************/
-/*! no static exports found */function(module,exports){eval('document.getElementById("study").innerHTML="hello webpack"\n\n//# sourceURL=webpack:///./src/main2.js?')}});
+/*! no static exports found */function(module,exports,__webpack_require__){"use strict";eval('\n\ndocument.getElementById("study").innerHTML = "hello webpack";\n\n//# sourceURL=webpack:///./src/main2.js?')}});
